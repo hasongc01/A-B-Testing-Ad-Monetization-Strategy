@@ -44,7 +44,16 @@ As part of the ad monetization growth strategy, RG is testing a new sponsored li
 The data science team aims to measure ad effectiveness between these designs. If the new layout improves engagement, RG will scale it platform-wide.
 
 # 2. Causal Question
-If RG changes the ad layout from current to new design, will the number of restaurant reservations increase?
+The main goal of this experiment is to assess causal impact of sponsored ads across the platform.
+
+The primary causal question is: If RG switches from the current layout to the new layout, will reservations increase?
+
+A useful secondary question is: Does the current ad lift conversions vs without ads? 
+
+Two Business Strategies can be developed from this experiment:
+- If ads are impactful → increase subscription pricing via competitor analysis.
+- If new ad design performs better → roll out platform-wide.
+
 
 # 3. Key Metrics
 ## North Star / Primary Metric:
@@ -60,14 +69,7 @@ Secondary Metrics are phone calls and page visits.
 - The number of page visits to restaurant pages in a month.
 These measure engagement and visibility, though reservations are the ultimate outcome.
 
-# 4. Experimentation Goal
-The main goal of this experiment is to assess causal impact of sponsored ads across the platform.
-
-Two Business Strategies can be developed from this experiment:
-- If ads are impactful → increase subscription pricing via competitor analysis.
-- If new ad design performs better → roll out platform-wide.
-
-# 5. Randomization Control & Balance Check
+# 4. Randomization Control & Balance Check
 Randomization Unit
 - Individual restaurants that do not currently subscribe to RG’s ads.
 
@@ -85,15 +87,17 @@ Balance Check
 - Statistical significance → formal equivalence.
 - Economic significance → practical equivalence (do differences matter for outcomes?).
 
-# 6. Precision & Power Analysis
+# 5. Precision & Power Analysis
 Accuracy: Unbiased estimates of ATE due to randomization.
+
 Bias: None, since assignment is random.
+
 Precision: Depends on variance of outcomes and sample size.
 
 To improve power, we add control variables (stars, chain status) in regression to reduce residual variance.
 This improves precision without biasing ATE estimates.
 
-# 7. Hypothesis Testing
+# 6. Hypothesis Testing
 
 Null Hypothesis (H₀)
 - The average reservations per month in the treatment and control groups are equal
@@ -105,5 +109,5 @@ Statistical Method
 - Two-sample t-test to estimate ATE (difference in mean reservations).
 - One-sided test, since RG only cares about positive lift.
 
-# 8. Experimental Results
+# 7. Experimental Results
 The experiment results can be accessed from python notebook: 'ate_results.ipynb'
