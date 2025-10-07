@@ -10,14 +10,13 @@ This work demonstrates applied skills in A/B testing, causal inference, experime
 1. Business Context
 2. Causal Question
 3. Key Metrics
-4. Experimentation Goal
-5. Randomization Control & Balance Check
-6. Precision & Power Analysis
-7. Hypothesis Testing
-8. Experimental Results
-9. Scale Up: Limitations, External Validity
-10. Customer Segmentation: Heterogeneous Treatment Effects (HTE)
-11. Further Improvements
+4. Randomization Control & Balance Check
+5. Precision & Power Analysis
+6. Hypothesis Testing
+7. Experimental Results
+8. Scale Up: Limitations, External Validity
+9. Customer Segmentation: Heterogeneous Treatment Effects (HTE)
+10. Further Improvements
 
 # 1. Business Context 
 ## Business Model: Two-Sided Digital Marketplace
@@ -34,21 +33,21 @@ RG’s platform offers two main features
    
 Sponsored Listings (Search Ads) 
 - Sponsored results appear above organic results, similar to Google Search Ads.
-- Ads are triggered when a user searches within 0.5 miles for a cuisine type.
+- Currently, Ads are triggered when a user searches within 0.5 miles for a cuisine type.
 - Example: A user searching for “Italian restaurants in Soho, NY” sees two Italian restaurants at the top of the results.
 
-## Growth Strategy Proposal
+## New Ad Design Proposal
 As part of the ad monetization growth strategy, RG is testing a new sponsored listing design.
-- Current design: Links to restaurant’s profile page.
-- New design: Highlights specific dishes to spark user interest.
-The data science team aims to measure ad effectiveness between these designs. If the new layout improves engagement, RG will scale it platform-wide.
+The new ad design highlights specific dishes to spark user interest.
+The data science team aims to measure ad effectiveness between the current and the new designs. 
+If the new layout improves engagement based on the A/B testing, RG will scale it platform-wide.
 
 # 2. Causal Question
 The main goal of this experiment is to assess causal impact of sponsored ads across the platform.
 
-The primary causal question is: If RG switches from the current layout to the new layout, will reservations increase?
+Primary causal question: If RG switches from the current layout to the new layout, will reservations increase?
 
-A useful secondary question is: Does the current ad lift conversions vs without ads? 
+Secondary question: Does the current ad lift conversions vs without ads? 
 
 Two Business Strategies can be developed from this experiment:
 - If ads are impactful → increase subscription pricing via competitor analysis.
@@ -57,11 +56,10 @@ Two Business Strategies can be developed from this experiment:
 
 # 3. Key Metrics
 ## North Star / Primary Metric:
-North Star Metric is the number of bookings made directly through RG platform in a month.
+NSM: the number of bookings made directly through RG platform in a month.
 
-This metric is chosen because it is simple, business-aligned, scalable, and sensitive to experiments.
-
-This metric is analogous to other two sided digital marketplaces: rides booked (Uber) or nights booked (Airbnb).
+- This metric is chosen because it is simple, business-aligned, scalable, and sensitive to experiments.
+- This metric is analogous to other two sided digital marketplaces: rides booked (Uber) or nights booked (Airbnb).
 
 ## Secondary Metrics:
 Secondary Metrics are phone calls and page visits.
