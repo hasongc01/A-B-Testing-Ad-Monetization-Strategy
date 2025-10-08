@@ -10,13 +10,9 @@ This work demonstrates applied skills in A/B testing, causal inference, experime
 1. Business Context
 2. Causal Question
 3. Key Metrics
-4. Randomization Control & Balance Check
-5. Precision & Power Analysis
-6. Hypothesis Testing
-7. Experimental Results
-8. Scale Up: Limitations, External Validity
-9. Customer Segmentation: Heterogeneous Treatment Effects (HTE)
-10. Further Improvements
+4. Experiment Design: Randomization Control & Balance Check, Precision & Power Analysis
+5. Experiment Results: ATE, HTE
+6. Conclusion & Further Improvements
 
 # 1. Business Context 
 ## Business Model: Two-Sided Digital Marketplace
@@ -63,12 +59,15 @@ NSM: the number of bookings made directly through RG platform in a month.
 
 ## Secondary Metrics:
 Secondary Metrics are phone calls and page visits.
-- The number of phone calls from the restaurant’s page in a month.
-- The number of page visits to restaurant pages in a month.
+- Phone Calls: The number of phone calls from the restaurant’s page in a month.
+- Page Visits: The number of page visits to restaurant pages in a month.
+
 These measure engagement and visibility, though reservations are the ultimate outcome.
 
-# 4. Randomization Control & Balance Check
-Randomization Unit
+# 4. Experiment Design
+
+Randomization Control & Balance Check:
+
 - Individual restaurants that do not currently subscribe to RG’s ads.
 
 Treatment vs Control 
@@ -76,36 +75,30 @@ Treatment vs Control
   - Treatment 2: New ad layout
   - Control: No ad
 
-Method
-- Complete random assignment, ~1,000 restaurants per group.
+Check Experiment Design Notebook for details. 
 
-Balance Check
-- Characteristics: star ratings, chain vs. independent.
-- Method: Two-sample t-tests for covariate balance.
-- Statistical significance → formal equivalence.
-- Economic significance → practical equivalence (do differences matter for outcomes?).
+Precision & Power Analysis:
 
-# 5. Precision & Power Analysis
-Accuracy: Unbiased estimates of ATE due to randomization.
+- Accuracy: Unbiased estimates of ATE due to randomization.
 
-Bias: None, since assignment is random.
+- Bias: None, since assignment is random.
 
-Precision: Depends on variance of outcomes and sample size.
+- Precision: Depends on variance of outcomes and sample size.
 
-To improve power, we add control variables (stars, chain status) in regression to reduce residual variance.
-This improves precision without biasing ATE estimates.
+Check Experiment Design Notebook for details. 
 
-# 6. Hypothesis Testing
+# 5. Experiment Results
+
+For Average Treatment Effect: 
 
 Null Hypothesis (H₀)
 - The average reservations per month in the treatment and control groups are equal
 
 Alternative Hypothesis (H₁)
-- Average reservations per month are higher in treatment than in control
+- Average reservations per month are different in treatment than in control
 
-Statistical Method
-- Two-sample t-test to estimate ATE (difference in mean reservations).
-- One-sided test, since RG only cares about positive lift.
+Check Experiment Result ATE Notebook for details
 
-# 7. Experimental Results
-The experiment results can be accessed from python notebook: 'ate_results.ipynb'
+
+# 6. Conclusion
+
